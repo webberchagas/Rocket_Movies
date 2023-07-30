@@ -40,7 +40,7 @@ class NotesController {
       tags
     })
 
-  }
+  } 
 
   async delete(request, response){
     const { id } = request.params
@@ -67,6 +67,7 @@ class NotesController {
       .whereLike('movie_notes.title', `%${title}%`)
       .whereIn('name', filterTags)
       .innerJoin('movie_notes', 'movie_notes.id', 'movie_tags.note_id')
+      .groupBy('title')
       .orderBy('movie_notes.title')
 
     }else{
