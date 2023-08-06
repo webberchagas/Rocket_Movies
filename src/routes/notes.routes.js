@@ -11,7 +11,7 @@ const ensureAuthenticated = require('../middleware/ensureAuthenticated');
 notesRoutes.use(ensureAuthenticated)
 
 notesRoutes.get('/', notesController.index)
-notesRoutes.post('/:user_id', notesController.create)
+notesRoutes.post('/', notesController.create)
 notesRoutes.delete('/:id', notesController.delete)
 notesRoutes.get('/:id', notesController.show)
 

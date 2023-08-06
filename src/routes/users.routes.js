@@ -17,6 +17,6 @@ const ensureAuthenticated = require('../middleware/ensureAuthenticated');
 
 usersRoutes.patch('/avatar', ensureAuthenticated, upload.single('avatar'), userAvatarController.update);
 usersRoutes.post('/', usersController.create);
-usersRoutes.put('/:id', ensureAuthenticated, usersController.update);
+usersRoutes.put('/', ensureAuthenticated, usersController.update);
 
 module.exports = usersRoutes;
